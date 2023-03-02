@@ -7,9 +7,10 @@ trigger:
 - main
 
 pool:
-  name: vicky
-  demands: 
-  - agent.Name -equals vickyWindowsSelfHosted
+  vmImage: windows-latest
+#  name: vicky
+#  demands: 
+ # - agent.Name -equals vickyWindowsSelfHosted
 
 steps:
 - script: echo Hello, world!
