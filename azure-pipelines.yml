@@ -7,7 +7,10 @@ trigger:
 - main
 
 pool:
-  vmImage: windows-latest
+#  vmImage: windows-latest
+  name: vicky
+  demands: 
+  - agent.Name -equals vickyWindowsSelfHosted
 
 steps:
 - script: echo Hello, world!
@@ -19,7 +22,7 @@ steps:
 
 - task: katalonTask@1
   inputs:
-    version: '8.3.0'
+    version: '8.5.5'
     executeArgs: '-retry=0 -testSuitePath="Test Suites/putty" -browserType="Windows" -executionProfile="default" -apiKey="4d690cd5-048f-419d-bba7-f560c06e7ded"'
 
 
