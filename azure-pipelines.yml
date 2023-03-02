@@ -16,6 +16,9 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- checkout: self
+  lfs: true
+
 - task: katalonTask@1
   inputs:
     version: '8.5.5'
